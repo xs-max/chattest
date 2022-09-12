@@ -1,9 +1,22 @@
+import { useState } from 'react';
 import { useEffect } from 'react';
+import {useSelector, useDispatch} from "react-redux"
 import './App.css';
 import ChatLayout from './Layout/ChatLayout';
+import { saveName } from './Store/Slices/userSlice';
 
 function App() {
 
+  const [userName, setUserName] = useState("")
+  const {name} = useSelector(state => state.user)
+  const dispatch = useDispatch()
+
+
+  const saveUserName = () => {
+    if(userName) {
+      dispatch(saveName(userName))
+    }
+  }
 
   useEffect(() => {
 
@@ -11,14 +24,18 @@ function App() {
 
   return (
     <div className="App">
-      <div className='prompt'>
-        <input type="text" placeholder='name' />
-        <button>Submit</button>
-      </div>
+      {
+        name ? (
+          <div className='prompt'>
+            <input type="text" onChange={(e) => setUserName(e.target.value)} placeholder='please enter your name' />
+            <button onClick={saveUserName}>Submit</button>
+          </div>
 
-    <ChatLayout>
+        ) : (
+        <ChatLayout />
+        )
+      }
 
-    </ChatLayout>
     </div>
   );
 }

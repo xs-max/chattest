@@ -1,10 +1,12 @@
 import React from 'react'
+import MesssageInput from '../Components/MessageInput'
 import styles from './ChatLayout.module.css'
 
-const ChatLayout = ({children}) => {
+const ChatLayout = () => {
   return (
     <div className={styles.container}>
-        {children}
+        <div></div>
+        <MesssageInput />
     </div>
   )
 }
