@@ -31,3 +31,13 @@
   color: white;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .prompt {
+        width: 90%;
+    }
+
+    .prompt button {
+      width: 25%;
+    }
+}

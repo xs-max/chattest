@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  message: []
+  messages: []
 
 };
 
@@ -10,7 +10,8 @@ const MessageSlice = createSlice({
   initialState,
   reducers: {
     getMessages: (state, { payload }) => {
-      state.message = payload.message
+      console.log("in dispatch")
+      state.messages = payload.messages
     },
   },
 });

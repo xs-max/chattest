@@ -1,0 +1,60 @@
+.container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+    align-items: center;
+    animation: scale .3s ease-in;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.container__reverse {
+    justify-content: flex-end;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background: #524EB6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+
+}
+
+.avatar__reverse {
+    background: #999;
+    order: 2;
+}
+
+.message {
+    width: 70%;
+    background: #524EB6;
+    padding:7px 15px;
+    color: white;
+    border-radius: 30px;
+    border-top-left-radius: 0;
+    font-size: 12px;
+}
+
+.message__reverse {
+    order: 1;
+    background: #999;
+
+}
+
+.author { 
+    font-weight: 700;
+}
